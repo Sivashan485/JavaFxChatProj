@@ -15,9 +15,9 @@
 
 
     <Label fx:id="LoginText" text="LOGIN" textAlignment="CENTER" />
-    <TextField fx:id="TfUsername"/>
-    <PasswordField fx:id="PfPassword"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <TextField fx:id="TfUsername" />
+    <PasswordField fx:id="PfPassword" />
+    <Button text="Login" onAction="#onClickLoginView"/>
     <Label fx:id="welcomeText"/>
 
 </VBox>
