@@ -2,10 +2,15 @@ package com.example.javafxchatproj;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.EventObject;
 
 public class loginViewControler {
 
@@ -22,13 +27,20 @@ public class loginViewControler {
 
 
 
-    public void onClickLoginView(ActionEvent actionEvent) {
+    @FXML
+    public void onClickLoginView(ActionEvent actionEvent) throws IOException {
         if(checkLogin()){
-
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("home-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("JavaFXCHAT HOME");
+            stage.setScene(new Scene(root, 800, 600));
+            stage.show();
         }else{
             createFailedLoginMessage();
         }
     }
+
 
     private boolean checkLogin(){
         return (TfUsername.getText().equals(username) && PfPassword.getText().equals(pwd));
