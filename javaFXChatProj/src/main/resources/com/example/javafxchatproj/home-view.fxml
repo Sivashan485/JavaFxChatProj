@@ -15,6 +15,7 @@
 
 
     <Label fx:id="HomeLb" text="JAVAFXCHAT HOME" textAlignment="CENTER" />
-    <ListView fx:id="userList"/>
+    <ListView fx:id="userList"  />
+    <Button fx:id="BtnUserFriendId"  text="CHAT"  onMouseClicked="#userSelectClick"></Button>
 
 </VBox>

@@ -32,10 +32,10 @@ public class loginViewControler {
         if(checkLogin()){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("home-view.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("JavaFXCHAT HOME");
-            stage.setScene(new Scene(root, 800, 600));
-            stage.show();
+
+            homeView.executeHomeView(actionEvent);
+
+
         }else{
             createFailedLoginMessage();
         }
@@ -53,4 +53,6 @@ public class loginViewControler {
         loginFailedMessage.setContentText("Login failed, pls try again!!!");
         loginFailedMessage.show();
     }
+
+
 }
