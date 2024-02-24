@@ -1,0 +1,39 @@
+/* Login label */
+.Login {
+    -fx-font-size: 24px; /* Larger font size */
+    -fx-font-weight: bold; /* Bold font weight */
+    -fx-text-fill: #333; /* Dark gray text color */
+}
+
+/* Welcome text label */
+.welcomeText {
+    -fx-font-size: 36px; /* Font size */
+    -fx-font-weight: bold; /* Bold font weight */
+    -fx-text-fill: #555; /* Dark gray text color */
+}
+
+/* Button style */
+.button1 {
+    -fx-background-color: linear-gradient(to bottom, #FFD166, #FFCA28); /* Gradient background */
+    -fx-text-fill: #333; /* Dark gray text color */
+    -fx-font-weight: bold; /* Bold font weight */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-background-radius: 5px; /* Rounded corners for background */
+    -fx-border-color: #FFCA28; /* Border color */
+    -fx-border-width: 2px; /* Border width */
+}
+
+/* Button hover effect */
+.button1:hover {
+    -fx-background-color: #FFCA28; /* Change background color on hover */
+    -fx-text-fill: #333; /* Change text color on hover */
+    -fx-border-color: #FFCA28; /* Change border color on hover */
+}
+
+/* Button pressed effect */
+.button1:pressed {
+    -fx-background-color: #FFCA28; /* Change background color when pressed */
+    -fx-text-fill: #333; /* Change text color when pressed */
+    -fx-border-color: #FFCA28; /* Change border color when pressed */
+}
