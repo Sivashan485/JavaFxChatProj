@@ -30,8 +30,7 @@ public class loginViewControler {
     @FXML
     public void onClickLoginView(ActionEvent actionEvent) throws IOException {
         if(checkLogin()){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("home-view.fxml"));
-            Parent root = loader.load();
+
 
             homeView.executeHomeView(actionEvent);
 

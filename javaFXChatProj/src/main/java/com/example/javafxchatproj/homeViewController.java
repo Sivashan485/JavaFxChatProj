@@ -2,13 +2,17 @@ package com.example.javafxchatproj;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static com.example.javafxchatproj.chatView.executeChatView;
 
 public class homeViewController implements Initializable {
     @FXML
@@ -39,17 +43,21 @@ public class homeViewController implements Initializable {
     }
 
     @FXML
-    private void userSelectClick() {
+    private void userSelectClick(ActionEvent actionEvent) throws IOException {
         if(userSelectedSuccessful()){
-
+            executeChatView(actionEvent,getSelectedUsername());
         }else{
             createErrorMessageUserSelection();
         }
     }
 
     private boolean userSelectedSuccessful(){
-        String selectedUser = userList.getSelectionModel().getSelectedItem();
+        String selectedUser = getSelectedUsername();
         return !("".equals(selectedUser) || selectedUser==null);
+    }
+
+    private String getSelectedUsername(){
+        return userList.getSelectionModel().getSelectedItem();
     }
 
     private void createErrorMessageUserSelection(){
